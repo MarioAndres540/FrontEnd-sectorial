@@ -1,0 +1,36 @@
+<section class="section">
+  <div class="spinner" *ngIf="showSpinner">
+    <mat-spinner></mat-spinner>
+  </div>
+
+  <div class="tabla" *ngIf="!showSpinner">
+    <mat-tab-group fitInkBarToContent>
+      <mat-tab label="Categorias">Categorias</mat-tab>
+      <mat-tab label="Sub Categoria">Sub Categorias</mat-tab>
+      <mat-tab label="Temas">Temas</mat-tab>
+    </mat-tab-group>
+
+    <table
+      mat-table
+      [dataSource]="dataSource"
+      class="mat-elevation-z8 demo-table"
+    >
+      @for (column of columns; track column) {
+      <ng-container [matColumnDef]="column.columnDef">
+        <th mat-header-cell *matHeaderCellDef>
+          {{ column.header }}
+        </th>
+        <td mat-cell *matCellDef="let row">
+          {{ column.cell(row) }}
+        </td>
+      </ng-container>
+      }
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      <button><<mat-icon class="mat-18">add</mat-icon></button>
+      <button><<mat-icon class="mat-18">edit</mat-icon></button>
+      <button><<mat-icon class="mat-18">delete</mat-icon></button>
+    </table>
+  </div>
+</section>
