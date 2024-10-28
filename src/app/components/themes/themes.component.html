@@ -1,1 +1,21 @@
-<p>themes works!</p>
+<h1>Agregar Tema</h1>
+<form [formGroup]="themeForm" (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <mat-label>Nombre</mat-label>
+    <input matInput formControlName="name" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Activo</mat-label>
+    <mat-checkbox formControlName="active"></mat-checkbox>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Fecha de Creación</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="dateCreation" />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <div>
+    <button mat-button type="button" (click)="onCancel()">Cancelar</button>
+    <button mat-button type="submit">Guardar</button>
+  </div>
+</form>

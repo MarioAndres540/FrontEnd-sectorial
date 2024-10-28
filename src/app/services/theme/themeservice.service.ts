@@ -17,13 +17,20 @@ export class ThemeserviceService {
   }
 
   getAll() {
-    console.log('entre getall');
-    console.log(`${this.URI}/list`);
+    return this.http.get<IthemeDto[]>(`${this.URI}/list`).pipe(
+      map((resp: IthemeDto[]) => {
+        console.log(resp);
+        return resp;
+      }),
+      catchError((error: any) => {
+        return throwError(() => new Error('Error en la solicitud'));
+      })
+    );
+  }
 
-    return this.http.get<IthemeDto>(`${this.URI}/list`).pipe(
+  addTheme(body: any) {
+    return this.http.post<IthemeDto>(`${this.URI}/create`, { body }).pipe(
       map((resp: IthemeDto) => {
-        console.log(`${this.URI}/list`);
-
         console.log(resp);
         return resp;
       }),

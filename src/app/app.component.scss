@@ -1,15 +1,21 @@
-.section {
+.section,
+.dataContent {
   display: flex;
   justify-content: center;
+  width: 95%;
 }
 
 .demo-table {
   width: 100%;
 }
 
-label {
+.label {
   color: black;
+  /* O el color que prefieras */
+  font-size: 16px;
+  /* Ajusta el tamaño de fuente si es necesario */
 }
+
 
 .tabla {
   display: grid;
