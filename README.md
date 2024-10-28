@@ -1,5 +1,36 @@
 # FrontEndSectorial
 
+echo "# FrontEnd-sectorial
+
+## Descripción
+
+Descripción breve del proyecto.
+
+## Instalación
+
+Intalacion de los paquetes necesarios para el proyecto
+\`\`\`
+npm install
+\`\`\`
+
+## Uso
+
+Para Ejecutar la aplicacion
+\`\`\`
+ng serve
+\`\`\`
+
+## Scripts
+
+## Autor
+
+Mario Andres Jaramillo
+
+## Licencia
+
+ISC
+" > README.md
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.10.
 
 ## Development server
